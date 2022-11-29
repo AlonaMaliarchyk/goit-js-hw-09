@@ -13,8 +13,10 @@ const body = document.querySelector('body');
 
 btnStart.addEventListener('click', () => {
     if (isActive) {
-        return;
-    };
+      return;
+  };
+  btnStart.disabled = true;
+  btnStop.disabled = false;
     isActive = true;
         timerId = setInterval(() => {
         const color = getRandomHexColor();
@@ -25,7 +27,9 @@ btnStart.addEventListener('click', () => {
 
 btnStop.addEventListener('click', () => {
     clearInterval(timerId);
-    isActive = false;
+  isActive = false;
+  btnStart.disabled = false;
+  btnStop.disabled = true;
 })
 
 
