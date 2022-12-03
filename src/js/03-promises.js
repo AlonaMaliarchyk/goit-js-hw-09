@@ -23,7 +23,6 @@ refs.form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-
   const {
     elements: { delay, step, amount }
   } = event.currentTarget;
@@ -42,4 +41,5 @@ function handleSubmit(event) {
     });
     deleyStep += stepNum;
   }
+  refs.form.reset();
 }
